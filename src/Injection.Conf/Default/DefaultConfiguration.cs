@@ -7,6 +7,15 @@ public static class DefaultConfiguration
 {
     public static IServiceProvider SetUp()
     {
+        IServiceCollection services = SetUpServices();
+
+        IServiceProvider provider = services.BuildServiceProvider();
+
+        return provider;
+    }
+
+    public static IServiceCollection SetUpServices()
+    {
         IServiceCollection services = new ServiceCollection();
 
         // services.AddSingleton(typeof(IDbSet<>), typeof(Injection.Lib.Core.Store.DbSet<>));
@@ -20,8 +29,6 @@ public static class DefaultConfiguration
         services.AddTransient<ITemplate, Injection.Lib.Core.Services.TemplateProvider>();
         services.AddTransient<IConfigProvider, Injection.Lib.Core.Services.ConfigProvider>();
 
-        IServiceProvider provider = services.BuildServiceProvider();
-
-        return provider;
+        return services;
     }
 }

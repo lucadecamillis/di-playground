@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Injection.Lib.Contract.DataContract;
 using Injection.Lib.Contract.Enums;
 
@@ -8,7 +7,7 @@ namespace Injection.Lib.Contract.Interfaces
     {
         LoginLevel GetLoginLevel();
 
-        Task<LoginResponse> Login(string userName, string password);
+        Task<LoginResponse> Login(LoginRequest request);
 
         Task Logout();
     }

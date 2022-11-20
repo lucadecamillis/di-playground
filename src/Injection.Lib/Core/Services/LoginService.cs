@@ -12,7 +12,7 @@ namespace Injection.Lib.Core.Services
             return LoginLevel.SecondFactor;
 		}
 
-		public async Task<LoginResponse> Login(string userName, string password)
+		public async Task<LoginResponse> Login(LoginRequest request)
 		{
             await Task.Delay(500).ConfigureAwait(false);
 
