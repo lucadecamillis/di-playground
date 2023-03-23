@@ -12,6 +12,6 @@ public class ResolutionTest
 
         IUserService? userService = serviceProvider.GetService<IUserService>();
 
-        Assert.NotNull(userService);
+        Assert.NotNull(userService); 
     }
 }
